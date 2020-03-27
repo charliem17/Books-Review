@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    <section class="book">
+        <div class="google-data">
+        {% if book != None %}
+            <h1>Book data based on Google's API:</h1>
+            <p>{{ book.title }}</p>
+            <p>by {{ book.authors }}</p>
+            <p>Average rating: {{ book.rating }}</p>
+            <p>Number of Online Ratings: {{ book.numberOfRatings }}</p>
+        {% else %}
+            <h1>No data found on Google's API for this book</h1>
+        {% endif %}
+        </div>
+
+        <div class="btn-container">
+            <button id="open-review-ui">Write a Review</button>
+        </div>
+
+        <div class="reviews">
+            {% if reviews %}
+                {% for review in reviews %}
+                    <div class="review">
+                        <p>{{ review.username }}</p>
+                        <p>{{ review.date }}</p>
+                        <p>Rating: {{ review.rating }}/10</p>
+                        <p>Review: {{ review.review }}</p>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <h2>There are no user reviews on this website.</h2>
+            {% endif %}
+        </div>
+
+        <div class="review-ui">
+            <div class="review-container">
+                <h2>Enter a Review</h2>
+                <form action="{{ url_for('book_page.review_book') }}" method="post">
+                    <textarea name="input" placeholder="Your review..."></textarea>
+                    
+                    <div>
+                        <label for="rating">Rating (0-10)</label>
+                        <input type="number" name="rating" max="10" min="0" value="10">
+                    </div>
+
+                    <div>
+                        <label for="isbn">ISBN:</label>
+                        <input type="text" name="isbn" value="{{ book.isbn }}" readonly>
+                    </div>
+                    
+                    <div class="buttons">
+                        <button type="submit" id="review-submit">Submit</button>
+                        <button type="reset" id="review-cancel">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    <script src="{{ url_for('static', filename='/js/bookui.js') }}"></script>
+{% endblock %}

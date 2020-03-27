@@ -1,0 +1,86 @@
+section {
+
+    .container .info, .container .info > form {
+        @include flex-center();
+        flex-flow: column;
+    }
+
+    .container {
+        height: inherit;
+        .info {
+            height: inherit;
+            p {
+                font-size: 2em;
+            }
+            p > .user {
+                font-size: 1.5em;
+            }
+            input {
+                font-size: 1.4em;
+                width: 100%;
+                border: 2px solid #9999;
+                padding: 0 .2em;
+                margin: 2em 0;
+                animation: pulse-border 2s infinite;
+                &:hover {
+                    animation-play-state: paused;
+                }
+            }
+            button {
+                padding: .25em 1em;
+                border: 2px solid #9999;
+                transition: border-color .5s, background-color .5s, color .5s;
+                &:hover {
+                    border-color: #00BF8C;
+                    background-color: #244A59;
+                    color: white;
+                }
+            }
+        }
+        .books {
+            min-height: 80vh;
+            h2 {
+                font-size: 2em;
+                text-align: center;
+            }
+            .books-container {
+                
+                display: grid;
+                grid-template-columns: minmax(100px, 1fr);
+                max-width: 600px;
+                margin: 0 auto;
+
+                .book {
+                    margin: 1em;
+                    text-align: center;
+                    border: 2px solid transparent;
+                    background-color: white;
+                    border-radius: 10px;
+                    box-shadow: 0px 2px 2px 1px #aaaa;
+                    transition: border-color .5s, background-color .5s, box-shadow .5s;
+                    .title {
+                        font-size: 1.4em;
+                    }
+                    &:hover {
+                        border-color: #00BF8C;
+                        background-color: #eeee;
+                        box-shadow: none;
+                        transition-duration: .25s;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@keyframes pulse-border {
+    0% {
+        border-color: #9999;
+    }
+    50% {
+        border-color: #00BF8C;
+    }
+    100% {
+        border-color: #9999;
+    }
+}

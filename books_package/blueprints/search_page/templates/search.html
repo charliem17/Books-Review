@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<div class="container">
+    <div class="info">
+        <p>
+            <span class="user">{{ user }},</span> <br> search across thousands of books, here.
+        </p>
+        <form action="{{ url_for('search_page.search_result') }}" method="get">
+            <input type="text" name="input" placeholder="Title, author, or isbn...">
+            <button type="submit">Search</button>
+        </form>
+    </div>
+
+    <div class="books">
+        
+        {% if books|length > 0 %}
+            <h2>Results ({{ books|length }})</h2>
+        {% else %}
+            <h2>No results :(</h2>
+        {% endif %}
+        
+        {% if books %}
+        <div class="books-container">
+            {% for book in books %}
+                <!-- Default display is none. These are dynamically loaded -->
+                <a href="{{ url_for('book_page.book', isbn=book.isbn) }}" 
+                   class="book"
+                   style="display: none;"
+                   >
+                    <p class="title">{{ book.title }}</p>
+                    <p class="author">by {{ book.author }}</p>
+                    <p class="year">{{ book.year }}</p>
+                    <p class="isbn">({{ book.isbn }})</p>
+                </a>
+            {% endfor %}
+        </div>
+        {% endif %}
+
+    </div>
+</div>
+{% if books %}
+    <script src="{{ url_for('static', filename='/js/scroll.js') }}"></script>
+    <script src="{{ url_for('static', filename='/js/renderbooks.js') }}"></script>
+{% endif %}
+{% endblock %}

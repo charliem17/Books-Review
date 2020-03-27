@@ -1,0 +1,23 @@
+{% extends "entry_layout.html" %}
+
+{% block title %}
+    Signup
+{% endblock %}
+
+{% block action %}
+    Create account
+{% endblock %}
+
+{% block form %}
+    <form action="{{ url_for('entry_page.signup') }}" method="post">
+        <input type="text" placeholder="Username" name="username">
+        <input type="password" placeholder="Password" name="password">
+        <button>Signup</button>
+    </form>
+    <a href="{{ url_for('entry_page.enter') }}">
+        <button>Go back to login</button>
+    </a>
+    <p class="message">
+        {{ message }}
+    </p>
+{% endblock %}

@@ -1,0 +1,399 @@
+@import url("https://fonts.googleapis.com/css?family=Baloo+2&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  font: 18px/1.5 'Baloo 2', sans-serif;
+}
+
+body {
+  background-color: #bbbb;
+  height: 100%;
+}
+
+input, button {
+  border-radius: 5px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: white;
+}
+
+header .container {
+  padding: 1em 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+header .container ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style-type: none;
+}
+
+header .container ul li {
+  margin-left: 1.5em;
+}
+
+header .drop-fade {
+  width: 100%;
+  height: 6px;
+  position: absolute;
+  background: -webkit-gradient(linear, left top, left bottom, from(white), to(rgba(0, 0, 0, 0)));
+  background: linear-gradient(to bottom, white, rgba(0, 0, 0, 0));
+}
+
+.container {
+  width: 88%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+section.main {
+  height: 100vh;
+}
+
+.abstract-background {
+  width: 100%;
+  height: 100vh;
+  background: url("../images/abstract-wallpaper.jpg") no-repeat center;
+  background-size: cover;
+}
+
+.abstract-background .container {
+  max-width: 400px;
+  margin: 0 auto;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+}
+
+.abstract-background .container h1 {
+  color: white;
+  font-size: 4em;
+  white-space: nowrap;
+}
+
+.abstract-background .container form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+}
+
+.abstract-background .container form input {
+  border: none;
+  padding: .25em .5em 0.1em .5em;
+  margin: .5em 0;
+}
+
+.abstract-background .container form button, .abstract-background .container button {
+  min-width: 100px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 2px solid transparent;
+  padding: .25em 1em;
+  margin: .5em 0;
+  -webkit-transition: border-color .5s, background-color .5s, color .5s;
+  transition: border-color .5s, background-color .5s, color .5s;
+}
+
+.abstract-background .container form button:hover, .abstract-background .container button:hover {
+  border-color: #0080FF;
+  background-color: #004080;
+  color: white;
+}
+
+.abstract-background .container .message {
+  min-height: 75px;
+  position: relative;
+  margin-top: 1em;
+  font-size: 1.2em;
+  color: white;
+  text-align: center;
+}
+
+section .container .info, section .container .info > form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+}
+
+section .container {
+  height: inherit;
+}
+
+section .container .info {
+  height: inherit;
+}
+
+section .container .info p {
+  font-size: 2em;
+}
+
+section .container .info p > .user {
+  font-size: 1.5em;
+}
+
+section .container .info input {
+  font-size: 1.4em;
+  width: 100%;
+  border: 2px solid #9999;
+  padding: 0 .2em;
+  margin: 2em 0;
+  -webkit-animation: pulse-border 2s infinite;
+          animation: pulse-border 2s infinite;
+}
+
+section .container .info input:hover {
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+}
+
+section .container .info button {
+  padding: .25em 1em;
+  border: 2px solid #9999;
+  -webkit-transition: border-color .5s, background-color .5s, color .5s;
+  transition: border-color .5s, background-color .5s, color .5s;
+}
+
+section .container .info button:hover {
+  border-color: #00BF8C;
+  background-color: #244A59;
+  color: white;
+}
+
+section .container .books {
+  min-height: 80vh;
+}
+
+section .container .books h2 {
+  font-size: 2em;
+  text-align: center;
+}
+
+section .container .books .books-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: minmax(100px, 1fr);
+      grid-template-columns: minmax(100px, 1fr);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+section .container .books .books-container .book {
+  margin: 1em;
+  text-align: center;
+  border: 2px solid transparent;
+  background-color: white;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 2px 2px 1px #aaaa;
+          box-shadow: 0px 2px 2px 1px #aaaa;
+  -webkit-transition: border-color .5s, background-color .5s, -webkit-box-shadow .5s;
+  transition: border-color .5s, background-color .5s, -webkit-box-shadow .5s;
+  transition: border-color .5s, background-color .5s, box-shadow .5s;
+  transition: border-color .5s, background-color .5s, box-shadow .5s, -webkit-box-shadow .5s;
+}
+
+section .container .books .books-container .book .title {
+  font-size: 1.4em;
+}
+
+section .container .books .books-container .book:hover {
+  border-color: #00BF8C;
+  background-color: #eeee;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  -webkit-transition-duration: .25s;
+          transition-duration: .25s;
+}
+
+@-webkit-keyframes pulse-border {
+  0% {
+    border-color: #9999;
+  }
+  50% {
+    border-color: #00BF8C;
+  }
+  100% {
+    border-color: #9999;
+  }
+}
+
+@keyframes pulse-border {
+  0% {
+    border-color: #9999;
+  }
+  50% {
+    border-color: #00BF8C;
+  }
+  100% {
+    border-color: #9999;
+  }
+}
+
+section > .book .google-data {
+  text-align: center;
+  margin-top: 8em;
+}
+
+section > .book .google-data * {
+  font-size: 1.4em;
+}
+
+section > .book .btn-container {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+section > .book .btn-container #open-review-ui {
+  margin: 2em;
+  padding: .5em 1em;
+}
+
+section > .book .reviews {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-flow: wrap;
+      flex-flow: wrap;
+}
+
+section > .book .reviews .review {
+  padding: 1em;
+  margin: 1em;
+  max-width: 22em;
+  background-color: #dddd;
+  border-radius: 5px;
+}
+
+section > .book .review-ui {
+  pointer-events: none;
+  opacity: 0;
+  -webkit-transition: opacity .5s;
+  transition: opacity .5s;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+section > .book .review-ui .review-container, section > .book .review-ui .review-container form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+}
+
+section > .book .review-ui .review-container {
+  padding: 1em;
+  background-color: #c8c8c8;
+  border-radius: 5px;
+}
+
+section > .book .review-ui .review-container *:not(div) {
+  margin: .5em;
+}
+
+section > .book .review-ui .review-container form textarea {
+  padding: .5em;
+  width: 20em;
+  min-height: 10em;
+  resize: vertical;
+}
+
+section > .book .review-ui .review-container form input {
+  width: 8em;
+  text-align: center;
+}
+
+section > .book .review-ui .review-container form .buttons button {
+  width: 5em;
+}
+
+section > .book .review-ui.show {
+  opacity: 1;
+  pointer-events: initial;
+  -webkit-transition-duration: .25s;
+          transition-duration: .25s;
+}
+/*# sourceMappingURL=styles.css.map */
